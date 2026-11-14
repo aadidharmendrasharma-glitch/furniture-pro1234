@@ -1,0 +1,220 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+    color: #222;
+}
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px #0002;
+}
+
+header {
+    background: #17365d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+section {
+    margin-top: 25px;
+}
+
+h2, h3 {
+    color: #17365d;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 11px;
+    margin: 7px 0;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 65px;
+    resize: vertical;
+}
+
+.two-columns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.two-columns label {
+    flex: 1;
+    min-width: 200px;
+    font-weight: bold;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #17365d;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+td input {
+    min-width: 65px;
+    text-align: center;
+}
+
+button {
+    padding: 11px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #17365d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .85;
+}
+
+.green {
+    background: #198754;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.view-btn {
+    background: #198754;
+}
+
+.print-btn {
+    background: #17365d;
+}
+
+.summary {
+    max-width: 450px;
+    margin-left: auto;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.security-section,
+.saved-bills {
+    padding: 20px;
+    background: #f4f7fb;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+}
+
+#saveStatus {
+    color: #198754;
+    font-weight: bold;
+}
+
+.button-group,
+.history-top {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.history-top input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.history-actions {
+    display: flex;
+    gap: 3px;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #aaa;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 25px;
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 5px;
+        max-width: 100%;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    input, textarea {
+        border: none;
+        padding: 3px;
+        color: black;
+    }
+
+    table {
+        min-width: 0;
+    }
+
+    th, td {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    @page {
+        size: A4 landscape;
+        margin: 10mm;
+    }
+}
+

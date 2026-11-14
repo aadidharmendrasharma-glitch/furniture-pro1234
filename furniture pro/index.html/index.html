@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Furniture Pro Billing Software</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <h1>FURNITURE PRO</h1>
+    <p>Furniture Manufacturing & Billing Software</p>
+</header>
+
+<section class="invoice">
+    <h2>INVOICE</h2>
+
+    <div class="two-columns">
+        <label>Bill Number
+            <input id="billNo" placeholder="Enter Bill Number">
+        </label>
+
+        <label>Bill Date
+            <input type="date" id="billDate">
+        </label>
+    </div>
+</section>
+
+<section>
+    <h3>Customer Details</h3>
+
+    <input id="customerName" placeholder="Customer Name">
+    <input id="customerMobile" placeholder="Mobile Number">
+    <textarea id="customerAddress" placeholder="Customer Address"></textarea>
+</section>
+
+<section>
+    <h3>Product Details</h3>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Length</th>
+                    <th>Width</th>
+                    <th>Size</th>
+                    <th>Qty</th>
+                    <th>Total Sq Ft</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                    <th class="no-print">Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="productBody"></tbody>
+        </table>
+    </div>
+
+    <button class="green no-print" onclick="addProduct()">+ Add Product</button>
+</section>
+
+<section class="summary">
+    <h3>Bill Summary</h3>
+
+    <div class="total-row">
+        <span>Total Square Feet</span>
+        <strong id="totalSqFt">0.00</strong>
+    </div>
+
+    <div class="total-row">
+        <span>Grand Total</span>
+        <strong>₹ <span id="grandTotal">0.00</span></strong>
+    </div>
+
+    <label>Advance Payment
+        <input type="number" id="advance" min="0" value="0">
+    </label>
+
+    <div class="total-row">
+        <span>Remaining Amount</span>
+        <strong>₹ <span id="remaining">0.00</span></strong>
+    </div>
+</section>
+
+<section>
+    <h3>Additional Notes</h3>
+    <textarea id="notes" placeholder="Enter Notes"></textarea>
+</section>
+
+<!-- SAVE AND BACKUP -->
+<section class="security-section no-print">
+    <h3>Data Safety & Backup</h3>
+    <p id="saveStatus">Ready to save</p>
+
+    <div class="button-group">
+        <button onclick="saveBillToHistory()">Save Bill</button>
+        <button onclick="downloadBackup()">Download Backup</button>
+        <button onclick="document.getElementById('restoreFile').click()">Restore Backup</button>
+
+        <input type="file" id="restoreFile" accept=".json,application/json" hidden>
+    </div>
+</section>
+
+<!-- SAVED BILLS -->
+<section class="saved-bills no-print">
+    <h2>Saved Bills / Bill History</h2>
+
+    <div class="history-top">
+        <input type="text" id="searchBill"
+        placeholder="Search Bill Number or Customer Name...">
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Bill No.</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Mobile</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="savedBillsList"></tbody>
+        </table>
+    </div>
+
+    <h3 id="billCount">Total Saved Bills: 0</h3>
+</section>
+
+<footer>
+    <h3>Thank You For Your Business!</h3>
+    <p>FURNITURE PRO</p>
+</footer>
+
+<div class="buttons no-print">
+    <button onclick="calculateBill()">Calculate</button>
+    <button onclick="window.print()">Print Current Bill</button>
+    <button class="green" onclick="newBill()">New Bill</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
